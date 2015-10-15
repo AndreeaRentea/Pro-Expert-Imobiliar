@@ -1,0 +1,54 @@
+Nelamuriri CRM
+
+1.	Tabel agent/contacte (agent/clienti) -> Proprietati ramane (vor o singura coloana)
+Doar agentul respectiv are voie sa vada datele de contact ale clientilor de care se ocupa. Alti agenti nu au dreptul sa vada clientii de care se ocupa agentul respectiv.
+
+2.	Roluri – admin si agent + asistent
+Adminul poate modifica/adauga/sterge agenti, clienti, proprietati. Poate muta o oferta de la un agent la altul si poate activa ofertele dezactivate/ expirate/retrase (vezi semafoare)  
+
+Agentul are acces la ofertele si clientii de care se ocupa si poate modifica date de la proprietati/oferte. NU are voie sa modifice datele de contact ale clientului.
+
+Asistentul are dreptul de a adauga/modifica/sterge oferte, de a revalida oferte, vede toti clientii si poate modifica/sterge/ clienti.
+
+3.	Sortare propietati (au acceptat propunerea noastra cu mai multe sortari) – in functie de semafor, ultimul adaugat, alphabetic (au lasat la latitudinea noastra)
+
+4.	Semafoare semnificatie – interval de timp
+
+Proprietati 
+-	semafor verde (A) – se schimba in semafor galben la 10 zile de la ultima validare
+-	semafor galben (A) – se schimba in rosu dupa 10 zile
+-	semafor rosu (A) – se schimba in retrasa la 20 de zile
+-	semafor negru - retrasa (R) – este final (oferta dezactivata – poate si reactivate doar de catre asistent si admin)
+-	semafor negru – tranzactionata de noi (T) – sunt ofertele vandute – se selecteaza in momentul in care s-a terminat tranzactia
+Cereri
+-	semafor verde (A) – se schimba in semafor galben la 20 zile de la ultima validare
+-	semafor galben (A) – se schimba in rosu dupa 20 zile
+-	semafor rosu (A) – este semafor final – poate fi modificata in tranactionata sau pierduta
+-	semafor tranzactionat (R) – - cereri finale 
+-	semafor pierduta (P) – cereri pierdute
+
+5.	Revalidare automata – in momentul in care este accesata oferta, aceasta sa fie si revalidata automat
++  buton de revalidare – pentru vizionari
+
+6.	Pentru adaugare de oferte vor ca form-ul sa fie cu check-box-uri
+
+7.	Tot la oferte sa aibe textbox pentru observatii (private si publice)
+Observatiile private pot fi vizionate doar de catre agentul respectiv, iar cele publice si de catre ceilalti agenti 
+
+8.	Sa existe buton (mai mult check-box-uri …. Again :)) ) pentru adaugare/stergere de pe site-uri. El vrea butoane in loc de check-box-urile din demo ca le este mai usor.
+
+9.	Fara cloud (este in demo o chestie cu cloud storage … Mai bine ca nu vor =)) )
+
+10.	Iar chestia cu propus oferte pe mail :-? Deci … newsletter 
+
+11.	Cautare (prorietati) – la cereri este la fel  ca in demo!!
+La tip – cand selecteaza apartament sa ii mai apara si ce tip de apartament (1,2,3,4+ camere)
+La zona interna – avem Crangasi, Drumul Taberei, Giulesti si Militari in loc de ce este in demo
+Fara optiunea de promovare si alte optiuni (or sth … o_o cred ca asa se numea)
+Sa mai adaugam la portofoliul companiei (unde apar toti agentii si nu o sa mai apara contactele pentru ceilalti agenti) o listuta si cu agentii din companie pentru a putea cauta in functie de acestia.
+
+12.	Din pacate vor si rapoartele de activitate din dashboard :(, dar nu ar trebui sa fie prea complicat :-?
+
+
+
+
