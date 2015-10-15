@@ -1,0 +1,30 @@
+Tasks – CRM 
+
+1.	Baza de date
+2.	Interfata
+3.	Dashboard
+3.1.	Lista activitati
+3.2.	Lista cereri
+3.3.	Lista proprietati/oferte
+3.4.	Rapoarte activitate
+4.	Modul activitati
+4.1.	Lista activitati
+4.2.	Calendar
+5.	Modul Contacte
+5.1.	Contactele mele
+6.	Modul Proprietati/Oferte
+6.1.	Portofoliul meu (ofertele agentului curent)
+6.2.	Portofoliul companiei (ofertele tuturor angajatilor)
+7.	Modul Cereri
+7.1.	Cererile mele
+8.	Sistem de recomandare oferte pentru client
+9.	Motor de cautare
+10.	Adaugare activitati, contacte, proprietate, cerere
+10.1.	Validare proprietati
+11.	Newsletter
+12.	Semafoare (Vezi Nelamuriri CRM)
+13.	Roluri (admin, asistent, agent)
+14.	Criptare parole
+15.	Trimitere oferte catre site-uri partenere (promovare)
+15.1.	Adaugare/stergere de pe site-uri (buton/butoane)
+16.	Notificari (probabil – nu s-a cerut in mod explicit!!)
