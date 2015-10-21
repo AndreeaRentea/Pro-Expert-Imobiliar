@@ -1,0 +1,108 @@
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+CREATE DATABASE `crm` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `crm`;
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `asistenti` (
+  `ID_asist` bigint(20) NOT NULL auto_increment,
+  `nume` varchar(255) NOT NULL,
+  `mobil` longtext NOT NULL,
+  `mail` longtext,
+  `adresa` longtext,
+  `poza` longtext,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY  (`ID_asist`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ; 
+
+CREATE TABLE IF NOT EXISTS `agenti` (
+  `ID_agent` bigint(20) NOT NULL auto_increment,
+  `nume` varchar(255) NOT NULL,
+  `mobil` longtext NOT NULL,
+  `mail` longtext,
+  `adresa` longtext,
+  `poza` longtext,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY  (`ID_agent`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `oferte` (
+  `ID` bigint(20) NOT NULL auto_increment,
+  `semafor` longtext NOT NULL,
+  `data_introducere` datetime NOT NULL,
+  `data_modificare` datetime NOT NULL,
+  `data_validare` datetime NOT NULL,
+  `tip` text NOT NULL,
+  `camere` text,
+  `nivel` text ,
+  `suprafata` double,
+  `an_constructie` int(255),  
+  `locatie` longtext, 
+  `pret` double,  
+  `ID_agent` bigint(20),  
+  `contacte` longtext,
+  `promovare` longtext,
+  `pictograme` longtext,
+  `obs_publice` longtext,
+  `obs_private` longtext,
+  `convorbiri` longtext,
+  `vizionari` longtext,
+  `negocieri` longtext,  
+  PRIMARY KEY  (`ID`),
+  FOREIGN KEY  (`ID_agent`) REFERENCES agenti(`ID_agent`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `clienti` (
+  `ID_client` bigint(20) NOT NULL auto_increment,
+  `ID` bigint(20) ,
+  `ID_agent` bigint(20),
+  `nume` varchar(255) NOT NULL,
+  `tip` varchar(255),
+  `mobil` longtext NOT NULL,
+  `mail` longtext,
+  `adresa` longtext,
+  `localitatea` varchar(255),
+  `observatii` text,
+  PRIMARY KEY  (`ID_client`),
+  FOREIGN KEY  (`ID`) REFERENCES oferte(`ID`),
+  FOREIGN KEY  (`ID_agent`) REFERENCES agenti(`ID_agent`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+CREATE TABLE IF NOT EXISTS `cereri` (
+  `ID_cerere` bigint(20) NOT NULL auto_increment,
+  `ID_client` bigint(20) ,
+  `ID` bigint(20) ,
+  `ID_agent` bigint(20),
+  `semafor` longtext NOT NULL,
+  `tip` varchar(255) NOT NULL,
+  `buget` text, 
+  `observatii` text ,
+  PRIMARY KEY  (`ID_cerere`),
+  FOREIGN KEY  (`ID_client`) REFERENCES clienti(`ID_client`),
+  FOREIGN KEY  (`ID`) REFERENCES oferte(`ID`),
+  FOREIGN KEY  (`ID_agent`) REFERENCES agenti(`ID_agent`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `activitati` (
+  `ID_activ` bigint(20) NOT NULL auto_increment,
+  `ID_client` bigint(20) ,
+  `ID` bigint(20) ,
+  `ID_agent` bigint(20),
+  `ID_cerere` bigint(20),
+  `titlu` longtext,
+  `tip` longtext,
+  `data` datetime,
+  `ora` varchar(255),
+  `detalii` text ,
+  PRIMARY KEY  (`ID_activ`),
+  FOREIGN KEY  (`ID_client`) REFERENCES clienti(`ID_client`),
+  FOREIGN KEY  (`ID`) REFERENCES oferte(`ID`),
+  FOREIGN KEY  (`ID_agent`) REFERENCES agenti(`ID_agent`),
+  FOREIGN KEY (`ID_cerere`) REFERENCES cereri(`ID_cerere`) 
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
